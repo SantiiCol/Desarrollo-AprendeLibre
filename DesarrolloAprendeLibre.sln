@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34902.65
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesarrolloAprendeLibre", "DesarrolloAprendeLibre\DesarrolloAprendeLibre.csproj", "{C8FB8C51-8E0C-4FF0-B5CF-E73C5E45A7BF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C8FB8C51-8E0C-4FF0-B5CF-E73C5E45A7BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8FB8C51-8E0C-4FF0-B5CF-E73C5E45A7BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8FB8C51-8E0C-4FF0-B5CF-E73C5E45A7BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8FB8C51-8E0C-4FF0-B5CF-E73C5E45A7BF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1FB515BA-A436-4B22-90F7-D9097E31DF52}
+	EndGlobalSection
+EndGlobal
