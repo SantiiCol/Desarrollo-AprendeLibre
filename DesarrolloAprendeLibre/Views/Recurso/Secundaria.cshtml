@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño de Cartas</title>
+    <style>
+        /* Fondo general */
+        body {
+            margin: 0;
+            font-family: Arial;
+        }
+
+        .background {
+            background-color: #9fcadf; /* Color de fondo */
+            padding: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Ajusta la altura según tus necesidades */
+        }
+
+        .background-title {
+            position: absolute; /* Posiciona el título sobre el fondo */
+            top: 185px; /* Ajusta la posición vertical según tus necesidades */
+            left: 50%; /* Centra horizontalmente */
+            transform: translateX(-50%); /* Ajusta para centrar */
+            font-size: 80px; /* Tamaño del título */
+            color: #333; /* Color del título */
+            z-index: 1; /* Asegura que el título esté encima de otros elementos */
+            font-family: Georgia /* Puedes usar la fuente que desees */
+        }
+
+        /* Subfondo */
+        .subbackground {
+            background-color: #ffffff; /* Color de subfondo */
+            padding: 30px; /* Aumentar el padding para más espacio alrededor de las cartas */
+            border-radius: 15px; /* Radius más grande para bordes más redondeados */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            gap: 30px; /* Espacio entre cartas */
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 90%; /* Ajusta el ancho máximo del subfondo */
+        }
+
+        /* Cartas */
+        .card {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            width: 300px; /* Ajusta el ancho según tus necesidades */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative; /* Necesario para posicionar la flecha */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Imagen en forma circular */
+        .card-img {
+            border-radius: 50%;
+            width: 150px; /* Ajusta el tamaño de la imagen según tus necesidades */
+            height: 150px; /* Ajusta el tamaño de la imagen según tus necesidades */
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        /* Título */
+        .card-title {
+            margin: 0;
+            font-size: 24px; /* Tamaño del texto del título */
+            color: #333;
+            position: relative; /* Necesario para posicionar la flecha debajo */
+            padding-bottom: 40px; /* Espacio para la flecha */
+            text-align: center;
+            font-family: Georgia;
+        }
+
+        /* Flecha */
+        .card-link {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%); /* Centra la flecha horizontalmente */
+            bottom: 10px; /* Espacio desde la parte inferior del contenedor */
+            font-size: 30px; /* Tamaño más grande de la flecha */
+            color: #007bff; /* Color de la flecha */
+            text-decoration: none; /* Sin subrayado */
+        }
+
+            /* Estilo para la flecha */
+            .card-link::before {
+                content: '→'; /* Caracter de la flecha */
+            }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="background-title">Secundaria</div>
+        <div class="subbackground">
+            <div class="card">
+                <img src="~/img/Imagen10.jpg" alt="Imagen 1" class="card-img">
+                <h3 class="card-title">
+                    Sexto
+                    <a href="pagina1.html" class="card-link"></a>
+                </h3>
+            </div>
+            <div class="card">
+                <img src="~/img/imagen5.jpg" alt="Imagen 2" class="card-img">
+                <h3 class="card-title">
+                    Septimo
+                    <a href="pagina2.html" class="card-link"></a>
+                </h3>
+            </div>
+            <div class="card">
+                <img src="~/img/imagen6.jpg" alt="Imagen 3" class="card-img">
+                <h3 class="card-title">
+                    Octavo
+                    <a href="pagina3.html" class="card-link"></a>
+                </h3>
+            </div>
+            <div class="card">
+                <img src="~/img/imagen7.jpg" alt="Imagen 4" class="card-img">
+                <h3 class="card-title">
+                    Noveno
+                    <a href="pagina4.html" class="card-link"></a>
+                </h3>
+            </div>
+            <div class="card">
+                <img src="~/img/Imagen8.jpg" alt="Imagen 5" class="card-img">
+                <h3 class="card-title">
+                    Decimo
+                    <a href="pagina5.html" class="card-link"></a>
+                </h3>
+            </div>
+            <div class="card">
+                <img src="~/img/Imagen9.jpg" alt="Imagen 5" class="card-img">
+                <h3 class="card-title">
+                    Once
+                    <a href="pagina5.html" class="card-link"></a>
+                </h3>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
