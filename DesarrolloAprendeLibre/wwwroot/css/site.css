@@ -307,7 +307,172 @@ footer {
         background-color: #218838;
     }
 
+    /*Estilo Para cartas de clase*/
 
+.titulo-clases {
+    text-align: center; /* Alinea el texto al centro */
+    color: black; /* Color del texto, que combina con el fondo oscuro de la carta */
+    font-family: Arial, sans-serif; /* Fuente que se ve bien con el diseño general */
+    font-size: 2em; /* Tamaño de la fuente */
+    margin: 0; /* Elimina los márgenes por defecto para un espaciado más uniforme */
+    padding: 0.5em 0; /* Espaciado vertical para mejorar la apariencia */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); /* Añade una sombra sutil al texto para destacarlo */
+}
+.help-card {
+    margin-top: 20px;
+    margin-bottom:20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    text-align: center;
+    transition: 400ms;
+}
+
+    .help-card:hover {
+        transform: scale(1.05);
+    }
+
+.help-image {
+    max-width: 100%;
+    height: 300px;
+    border-radius: 10px;
+}
+
+.help-text {
+    margin-top: 15px;
+}
+
+    .help-text h2 {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .help-text p {
+        font-size: 1em;
+        margin-bottom: 10px;
+    }
+
+.parent-card {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+    .cards .red {
+        background-color: #f43f5e;
+    }
+
+    .cards .blue {
+        background-color: #3b82f6;
+    }
+
+    .cards .green {
+        background-color: #22c55e;
+    }
+
+    .cards .card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        height: 100px;
+        width: 250px;
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+        transition: 400ms;
+    }
+
+        .cards .card p.tip {
+            font-size: 1em;
+            font-weight: 700;
+        }
+
+        .cards .card p.second-text {
+            font-size: 0.7em;
+        }
+
+        .cards .card:hover {
+            transform: scale(1.1, 1.1);
+        }
+
+        .cards .card:nth-child(7) {
+            order: 100;
+            flex: 1 1 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+
+/*Estilos para las cartas de clase*/
+
+.custom-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+    .custom-card img {
+        width: 100%;
+        height: auto;
+        border-bottom: 2px solid #ddd;
+    }
+
+.custom-card-body {
+    padding: 20px;
+}
+
+.custom-card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.custom-card-text {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.custom-card-footer {
+    padding: 10px 10px;
+    background-color: #f8f9fa;
+    border-top: 2px solid #ddd;
+    text-align: center;
+}
+
+.btn-custom {
+    margin-right: 5px;
+}
+
+.row-custom {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 400px;
+}
+
+.col-custom {
+    flex: 1 1 calc(33.333% - 20px);
+}
 
 
 footer {
