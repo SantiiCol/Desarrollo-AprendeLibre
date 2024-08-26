@@ -28,12 +28,15 @@
                 {
                     <a href="@Model.SubirArchivo" class="btn btn-primary btn-custom" download>Descargar Archivo</a>
                 }
-                <a href="@Url.Action("Edit", new { id = Model.IdClase })" class="btn btn-warning btn-custom">Editar</a>
-                <form asp-action="Delete" method="post" class="d-inline">
-                    <input type="hidden" name="id" value="@Model.IdClase" />
-                    <button type="submit" class="btn btn-danger btn-custom">Eliminar</button>
-                </form>
-                <a href="@Url.Action("Ciencias_Naturales", "Clase")" class="btn btn-secondary btn-custom">Volver a la Lista</a>
+                @if (User.IsInRole("Profesor"))
+                {
+                    <a href="@Url.Action("Edit", new { id = Model.IdClase })" class="btn btn-warning btn-custom">Editar</a>
+                    <form asp-action="Delete" method="post" class="d-inline">
+                        <input type="hidden" name="id" value="@Model.IdClase" />
+                        <button type="submit" class="btn btn-danger btn-custom">Eliminar</button>
+                    </form>
+                }
+                <a href="@Url.Action("Index", "Clase")" class="btn btn-secondary btn-custom">Volver a la Lista</a>
             </div>
         </div>
     </div>

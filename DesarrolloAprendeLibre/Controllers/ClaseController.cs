@@ -1,4 +1,6 @@
 ﻿using DesarrolloAprendeLibre.Models;
+using DesarrolloAprendeLibre.Permisos;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
@@ -7,6 +9,7 @@ using System.Security.Claims;
 
 namespace DesarrolloAprendeLibre.Controllers
 {
+    [ValidarSesion]
     public class ClaseController : Controller
     {
         private readonly AplDbContext _context;
@@ -66,13 +69,14 @@ namespace DesarrolloAprendeLibre.Controllers
         }
 
 
-
+        [Authorize(Policy = "ProfesorPolicy")]
         [HttpGet]
         public IActionResult create()
         {
             return View();
         }
 
+        [Authorize(Policy = "ProfesorPolicy")]
         [HttpPost]
         public async Task<IActionResult> create(Clase clase, IFormFile imagen, IFormFile Archivo)
         {
@@ -145,6 +149,7 @@ namespace DesarrolloAprendeLibre.Controllers
             return View(clase);
         }
 
+        [Authorize(Policy = "ProfesorPolicy")]
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
@@ -156,6 +161,7 @@ namespace DesarrolloAprendeLibre.Controllers
             return View(clase);
         }
 
+        [Authorize(Policy = "ProfesorPolicy")]
         [HttpPost]
         public async Task<IActionResult> Edit(int id, Clase clase, IFormFile imagen, IFormFile archivo)
         {
@@ -233,6 +239,7 @@ namespace DesarrolloAprendeLibre.Controllers
             return _context.Clases.Any(e => e.IdClase == id);
         }
 
+        [Authorize(Policy = "ProfesorPolicy")]
         [HttpPost]
         public async Task<IActionResult> Delete(int id)
         {

@@ -11,7 +11,11 @@
 
 <h2>Clases de Matematicas</h2>
 
-<a class="btn btn-primary mb-3" href="@Url.Action("Create", "Clase")">Crear Nueva Clase</a>
+@if (User.IsInRole("Profesor"))
+{
+    <a class="btn btn-primary mb-3" href="@Url.Action("Create", "Clase")">Crear Nueva Clase</a>
+}
+
 
 <div class="row-custom">
     @foreach (var clase in Model)
@@ -33,11 +37,14 @@
                         <a href="@clase.SubirArchivo" class="btn btn-primary btn-custom" download>Descargar Archivo</a>
                     }
                     <a href="@Url.Action("Details", "Clase", new { id = clase.IdClase })" class="btn btn-secondary btn-custom">Ver Detalles</a>
-                    <a href="@Url.Action("Edit", "Clase", new { id = clase.IdClase })" class="btn btn-warning btn-custom">Editar</a>
-                    <form asp-action="Delete" method="post" class="d-inline">
-                        <input type="hidden" name="id" value="@clase.IdClase" />
-                        <button type="submit" class="btn btn-danger btn-custom">Eliminar</button>
-                    </form>
+                    @if (User.IsInRole("Profesor"))
+                    {
+                        <a href="@Url.Action("Edit", "Clase", new { id = clase.IdClase })" class="btn btn-warning btn-custom">Editar</a>
+                        <form asp-action="Delete" method="post" class="d-inline">
+                            <input type="hidden" name="id" value="@clase.IdClase" />
+                            <button type="submit" class="btn btn-danger btn-custom">Eliminar</button>
+                        </form>
+                    }
                 </div>
             </div>
         </div>
