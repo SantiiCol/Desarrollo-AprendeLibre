@@ -97,7 +97,7 @@
 <body>
 
     <div class="custom-form-container">
-        <form action="@Url.Action("Index", "Acceso")" method="post">
+        <form action="@Url.Action("Login", "Acceso")" method="post">
             <label for="email" class="form-label">Correo</label>
             <input type="email" id="email" class="custom-form-control" name="Correo" required>
 
@@ -112,7 +112,7 @@
             <button class="custom-btn-primary" type="submit">Iniciar Sesión</button>
 
             <div class="custom-text-center mt-3">
-                <a href="@Url.Action("Registrar", "Acceso")" class="custom-text-primary">¿No tienes cuenta? Registrarse</a>
+                <a href="@Url.Action("Register", "Acceso")" class="custom-text-primary">¿No tienes cuenta? Registrarse</a>
             </div>
         </form>
     </div>

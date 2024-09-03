@@ -29,13 +29,13 @@ namespace DesarrolloAprendeLibre.Controllers
         }
 
         // accion para mostrar la vista del inicio de sesion
-        public IActionResult Index()
+        public IActionResult Login()
         {
             return View();
         }
 
         // Acción para mostrar la vista de registro de usuario con los roles disponibles
-        public IActionResult Registrar()
+        public IActionResult Register()
         {
             ViewBag.Roles = new SelectList(_context.Roles, "IdRol", "NombreRol");
             return View();
@@ -43,7 +43,7 @@ namespace DesarrolloAprendeLibre.Controllers
 
         // Acción HTTP POST para registrar un nuevo usuario
         [HttpPost]
-        public IActionResult Registrar(Usuario _usuario)
+        public IActionResult Register(Usuario _usuario)
         {
             // Verifica si las contraseñas coinciden
             if (_usuario.Clave != _usuario.ConfirmarClave)
@@ -85,7 +85,7 @@ namespace DesarrolloAprendeLibre.Controllers
 
             if (registrado)
             {
-                return RedirectToAction("Index", "Acceso");
+                return RedirectToAction("Login", "Acceso");
             }
             else
             {
@@ -96,7 +96,7 @@ namespace DesarrolloAprendeLibre.Controllers
 
         // Acción HTTP POST para iniciar sesión
         [HttpPost]
-        public async Task<IActionResult> Index(Usuario _usuario)
+        public async Task<IActionResult> Login(Usuario _usuario)
         {
             // Verifica si el correo y la clave no son nulos
             if (string.IsNullOrEmpty(_usuario.Correo) || string.IsNullOrEmpty(_usuario.Clave))
@@ -178,7 +178,7 @@ namespace DesarrolloAprendeLibre.Controllers
         public async Task<IActionResult> Salir()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            return RedirectToAction("Index", "Acceso");
+            return RedirectToAction("Login", "Acceso");
         }
 
         // Método para encriptar la clave usando SHA-256

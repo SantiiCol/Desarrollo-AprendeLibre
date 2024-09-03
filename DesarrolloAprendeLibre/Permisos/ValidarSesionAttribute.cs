@@ -15,7 +15,7 @@ namespace DesarrolloAprendeLibre.Permisos
             if (session.GetInt32("IdUsuario") == null)
             {
                 // Redirigir al usuario a la página de inicio de sesión
-                context.Result = new RedirectToActionResult("Index", "Acceso", null);
+                context.Result = new RedirectToActionResult("Login", "Acceso", null);
             }
 
             base.OnActionExecuting(context);

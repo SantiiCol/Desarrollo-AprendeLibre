@@ -18,8 +18,7 @@ public partial class Usuario
 
     [NotMapped]
     public string? ConfirmarClave { get; set; }
-
     public int IdRol { get; set; }
 
-    public virtual Role IdRolNavigation { get; set; } = null!;
+    public virtual Role? IdRolNavigation { get; set; }
 }

@@ -160,7 +160,7 @@
 
                     @if (!User.Identity.IsAuthenticated)
                     {
-                        <button class="login-button btn btn-primary ms-auto" onclick="location.href='@Url.Action("Index", "Acceso")';">
+                        <button class="login-button btn btn-primary ms-auto" onclick="location.href='@Url.Action("Login", "Acceso")';">
                             <i class="bi bi-person-circle"></i> Iniciar Sesión
                         </button>
                     }
@@ -201,18 +201,15 @@
                 <div class="footer-column">
                     <h3>Compañía</h3>
                     <ul>
-                        <li><a href="#">Acerca de Nosotros</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Contáctanos</a></li>
+                        <li><a href="@Url.Action("Acerca_de_Nosotros", "FooterLinks")">Acerca de Nosotros</a></li>
+                        <li><a href="@Url.Action("Contactanos", "FooterLinks")">Contactanos</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Soporte</h3>
                     <ul>
-                        <li><a href="#">Centro de Ayuda</a></li>
-                        <li><a href="#">Términos y Servicios</a></li>
-                        <li><a href="#">Legal</a></li>
-                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="@Url.Action("Terminos_y_Servicios", "FooterLinks")">Términos y Servicios</a></li>
+                        <li><a href="@Url.Action("Politica_de_Privacidad", "FooterLinks")">Política de Privacidad</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">

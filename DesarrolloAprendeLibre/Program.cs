@@ -1,15 +1,21 @@
 using DesarrolloAprendeLibre.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+builder.Services.AddControllersWithViews();
+
+// Move the AddDbContext line before building the app
+builder.Services.AddDbContext<AplDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("conexion")));
 
 // Cookies para el login
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(option =>
     {
-        option.LoginPath = "/Acceso/Index"; //Nuestro formulario de login
+        option.LoginPath = "/Acceso/Login"; //Nuestro formulario de login
         option.ExpireTimeSpan = TimeSpan.FromMinutes(30); //Tiempo de vida del logueo
         option.AccessDeniedPath = "/Home/Privacy"; //Formulario de Acceso denegado
     });
@@ -19,13 +25,6 @@ builder.Services.AddAuthorization(options =>
     options.AddPolicy("EstudiantePolicy", policy => policy.RequireRole("Estudiante"));
     options.AddPolicy("ProfesorPolicy", policy => policy.RequireRole("Profesor"));
 });
-
-// Add services to the container.
-builder.Services.AddControllersWithViews();
-
-// Move the AddDbContext line before building the app
-builder.Services.AddDbContext<AplDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("conexion")));
 
 builder.Services.AddSession(options =>
 {
@@ -57,7 +56,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Acceso}/{action=Registrar}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
 
